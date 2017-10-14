@@ -3,7 +3,9 @@
 
 FROM circleci/android:api-26-alpha
 
-#RUN groupadd --gid 1000 node && useradd --uid 1000 --gid node --shell /bin/bash --create-home node
+USER root
+
+RUN groupadd --gid 1000 node && useradd --uid 1000 --gid node --shell /bin/bash --create-home node
 # gpg keys listed at https://github.com/nodejs/node#release-team
 RUN set -ex \
   && for key in \
@@ -56,7 +58,6 @@ RUN set -ex \
   && ln -s /opt/yarn/bin/yarn /usr/local/bin/yarn \
   && ln -s /opt/yarn/bin/yarn /usr/local/bin/yarnpkg \
 && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz
-
 
 
 
