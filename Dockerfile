@@ -1,7 +1,7 @@
 # Base image to build the "Morning Sanskrit" app on circleci.
 # Uses the circleci android image and then adds nodejs from https://github.com/nodejs/docker-node/blob/36585913a2776f7f72afcdbf0d39d54625716916/6.11/wheezy/Dockerfile
 
-FROM circleci/android:api-26-alpha
+FROM circleci/android:api-23-alpha
 
 USER root
 
